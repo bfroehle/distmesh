@@ -1,0 +1,16 @@
+h1 { font-family: Verdata, arial, sans-serif, helvetica; font-size: 18pt; }
+h2 { font-family: Verdata, arial, sans-serif, helvetica; font-size: 18pt; }
+h3 {font-size:1.5em; font-weight:400; margin:6px 0; padding:0;}
+body     { font: 76% Verdana, Tahoma, Arial, sans-serif;
+           background-image: url(tilemesh1.gif);
+           background-color: white}
+pre      { font-size: 10pt }
+td       { font: 90% Verdana, Tahoma, Arial, sans-serif; }
+td.side  { background-image: url(tilemesh2.gif);
+           background-repeat: repeat-y;}
+hr       { color: sienna }
+th       { vertical-align: top;
+           text-align: left;
+           background-color: #e0e0ff }
+th.trans { vertical-align: top;
+           text-align: left }

@@ -1,0 +1,623 @@
+<HTML><HEAD><TITLE>DistMesh Function Reference</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<link rel="stylesheet" type="text/css" href="distmesh.css" />
+</HEAD>
+
+<BODY>
+
+<table width="100%">
+<tr>
+<td>
+
+<H2>DistMesh Function Reference</H2>
+
+<a href=index.html>Back</a>
+<hr>
+
+<H3>boundedges</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>e=boundedges(p,t)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Find all the boundary edges e in triangular mesh p,t.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>Useful for implementation of boundary
+    conditions for PDE solvers. See surftri for 3-D version.</td>
+  </tr>
+</table> 
+
+<H3>circumcenter</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>[pc,r]=circumcenter(p,t)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute the circumcenters pc and the circumradii r
+        for all triangles in the mesh p,t.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>Not vectorized.</td>
+  </tr>
+</table> 
+    
+<H3>dcircle</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=dcircle(p,xc,yc,r)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute signed distance function for circle centered at xc,yc with
+    radius r.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>ddiff</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=ddiff(d1,d2)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute signed distance function for set difference of two regions
+    described by signed distance functions d1,d2.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>Not exactly the true signed distance function for the difference,
+    for example around corners.</td>
+  </tr>
+</table> 
+
+<H3>dellipse</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=dellipse(p,axes)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute distance from points p to the ellipse centered at the origin
+    with axes=[a,b].</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>C++ code, uses LAPACK for eigenvalue problem.</td>
+  </tr>
+</table> 
+
+<H3>dellipsoid</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=dellipsoid(p,axes)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute distance from points p to the ellipsoid centered at the origin
+    with axes=[a,b,c].</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>C++ code, uses LAPACK for eigenvalue problem.</td>
+  </tr>
+</table> 
+
+<H3>dexpr</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=dexpr(p,fin,nit,alpha)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute signed distance function for general implicit expression fin.
+    The parameters nit and alpha have the default values 20 and 0.1.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>Requires the Symbolic Toolbox, although easy to rewrite to
+    accept derivatives of fin as inputs. The performance is poor,
+    a simple C implementation makes a big difference.</td>
+  </tr>
+</table> 
+
+<H3>dintersect</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=dintersect(d1,d2)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute signed distance function for set intersection of two regions
+    described by signed distance functions d1,d2.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>Not exactly the true signed distance function for the intersection,
+    for example around corners.</td>
+  </tr>
+</table> 
+
+<H3>distmesh2d</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>[p,t]=distmesh2d(fd,fh,h0,bbox,pfix,fparams)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>2-D Mesh Generator. See other documentation for details on usage.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>distmeshnd</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>[p,t]=distmeshnd(fd,fh,h0,bbox,pfix,fparams)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>3-D Mesh Generator. See other documentation for details on usage.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>distmeshsurface</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>[p,t]=distmeshsurface(fd,fh,h0,bbox,fparams)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>3-D Surface Mesh Generator. See other documentation for details on usage.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>dmatrix</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=dmatrix(p,xx,yy,dd)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute signed distance function by interpolation of the values dd on
+        the Cartesian grid xx,yy.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>xx,yy can be created with meshgrid.</td>
+  </tr>
+</table> 
+
+<H3>dmatrix3d</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=dmatrix3d(p,xx,yy,zz,dd)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute signed distance function by interpolation of the values dd on
+        the Cartesian grid xx,yy,zz.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>xx,yy,zz can be created with ndgrid.</td>
+  </tr>
+</table> 
+
+<H3>dpoly</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=dpoly(p,pv)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute signed distance function for polygon with vertices pv.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>Uses dsegment and inpolygon. It is usually good to provide pv
+    as fix points to distmesh2d.</td>
+  </tr>
+</table> 
+
+<H3>drectangle</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=drectangle(p,x1,x2,y1,y2)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute signed distance function for rectangle with corners (x1,y1),
+    (x2,y1), (x1,y2), (x2,y2).</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>Incorrect distance to the four corners, see drectangle0 for a true
+    distance function.</td>
+  </tr>
+</table> 
+
+<H3>drectangle0</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=drectangle0(p,x1,x2,y1,y2)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute signed distance function for rectangle with corners (x1,y1),
+    (x2,y1), (x1,y2), (x2,y2).</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>See drectangle for simpler version ignoring corners.</td>
+  </tr>
+</table> 
+
+<H3>dsegment</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>ds=dsegment(p,pv)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute distance from points p to the line segments in pv.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>C++ code, used by dpoly.</td>
+  </tr>
+</table> 
+
+
+<H3>dsphere</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=dsphere(p,xc,yc,zc,r)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute signed distance function for sphere centered at xc,yc,zc with
+    radius r.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>dunion</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>d=dunion(d1,d2)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute signed distance function for set union of two regions
+    described by signed distance functions d1,d2.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>Not exactly the true signed distance function for the union,
+    for example around corners.</td>
+  </tr>
+</table> 
+
+<H3>fixmesh</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>[p,t]=fixmesh(p,t)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Remove duplicated and unused nodes from p and update t correspondingly. Also make all elements orientations equal.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>hmatrix</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>h=hmatrix(p,xx,yy,dd,hh)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute mesh size function by interpolation of the values hh on
+        the Cartesian grid xx,yy.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>xx,yy can be created with meshgrid. The parameter dd is not used,
+     but included to get a syntax consistent with dmatrix.</td>
+  </tr>
+</table> 
+
+<H3>hmatrix3d</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>h=hmatrix3d(p,xx,yy,zz,dd,hh)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute mesh size function by interpolation of the values hh on
+        the Cartesian grid xx,yy,zz.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>xx,yy,zz can be created with ndgrid. The parameter dd is not used,
+     but included to get a syntax consistent with dmatrix.</td>
+  </tr>
+</table> 
+
+<H3>huniform</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>h=huniform(p)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Implements the trivial uniform mesh size function h=1.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>meshdemo2d</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>meshdemo2d</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Demonstration of distmesh2d.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>meshdemond</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>meshdemond</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Demonstration of distmeshnd.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>mkt2t</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>[t2t,t2n]=mkt2t(t)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute element connectivities from element indices.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>protate</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>p=protate(p,phi)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Rotate points p the angle phi around origin.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>pshift</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>p=pshift(p,x0,y0)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Move points p by (x0,y0).</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>simpplot</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>simpplot(p,t,expr,bcol,icol)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Plot 2-D or 3-D mesh p,t. The parameters expr, bcol, icol
+    are only used in 3-D and they have default values.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>simpqual</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>q=simpqual(p,t,type)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute qualities of triangular or tetrahedral elements in
+    the mesh p,t. If type==1 (default) the inradius/outradius expression
+    is used. If type==2 a slightly different expression is used.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>simpvol</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>v=simpvol(p,t)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Compute the signed volumes of the simplex elements in the mesh p,t.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<H3>surftri</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>tri=surftri(p,t)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Find all the surface triangles tri in tetrahedral mesh p,t.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td>Used by simpplot. Also useful for implementation of boundary
+    conditions for PDE solvers. See boundedges for 2-D version.</td>
+  </tr>
+</table> 
+
+<H3>uniformity</H3>
+
+<table>
+  <tr>
+    <th>Syntax:</th>
+    <td>u=uniformity(p,t,fh,fparams)</td>
+  </tr>
+  <tr>
+    <th>Description:</th>
+    <td>Computes "uniformity measure", that is, how close the element sizes
+    in the mesh p,t are to the desired mesh size function fh.</td>
+  </tr>
+  <tr>
+    <th>Comments:</th>
+    <td></td>
+  </tr>
+</table> 
+
+<HR>
+
+<ADDRESS>Per-Olof Persson <BR>Department of Mathematics, MIT 
+<BR>"lastname"@math.mit.edu </ADDRESS>
+
+</td>
+
+<td class=side width=120>
+</td>
+  
+</tr>
+</table>
+
+</BODY>
+</HTML>
